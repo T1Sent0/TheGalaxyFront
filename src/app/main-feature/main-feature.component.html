@@ -1,0 +1,41 @@
+<div class="main-feature-page">
+    <div class="page-title-container">
+        <h2>Пропускная система</h2>
+
+        <button (click)="logout()">Выйти из системы</button>
+    </div>
+    
+    <div class="user-tabel-wrapper">
+        <h4>Список пользователей</h4>
+
+        <table class="user-table" *ngIf="userList; else loadingTemplate">
+            <thead>
+                <tr>
+                    <td>ФИО</td>
+                    <td>E-mail</td>
+                    <td>Номер машины</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userList; let i = index">
+                    <td>{{ user.getDisplayName() }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ !user.carNumber ? 'Не указан' : user.carNumber }}</td>
+                    <td>
+                        <input placeholder="введите номер машины" *ngIf="user.isEdit"  [name]="'car-num-' + i" [(ngModel)]="user.carNumber">
+                        <button *ngIf="!user.isEdit" (click)="editUser(user)">Редактировать</button>
+                        <button *ngIf="user.isEdit" (click)="saveUser(user)">Сохранить</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<ng-template #loadingTemplate>
+    <div class="loading-container">
+        <span>Загрузка данных</span>
+    </div>
+</ng-template>

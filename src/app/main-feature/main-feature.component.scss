@@ -1,0 +1,35 @@
+.main-feature-page {
+    padding: 15px;
+
+    .page-title-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .input-label-text {
+        display: block;
+    }
+
+    .user-tabel-wrapper {
+        h4 {
+            margin-bottom: 15px;
+        }
+
+        .user-table {
+            margin-top: 15px;
+        }
+    }
+
+    .loading-container {
+        display: block;
+        padding: 30px;
+    }
+
+    .user-table {
+        tr > td {
+            padding: 10px;
+            border: 1px solid #c4c4c4;
+        }
+    }
+}

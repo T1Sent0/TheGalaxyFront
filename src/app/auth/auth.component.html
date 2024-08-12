@@ -1,0 +1,20 @@
+<div class="auth-page">
+    <div class="page-form-wrapper">
+        <span>Вход в систему</span>
+        <form class="page-form">
+            <label>
+                <span>E-mail</span>
+                <input name="email" [(ngModel)]="authModel.email">
+            </label>
+            
+            <label>
+                <span>Пароль</span>
+                <input type="password" name="password" [(ngModel)]="authModel.password">
+            </label>
+    
+            <div class="form-actions">
+                <button (click)="login()">Войти</button>
+            </div>
+        </form>
+    </div>
+</div>

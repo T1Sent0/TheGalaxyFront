@@ -1,0 +1,43 @@
+.auth-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .page-form-wrapper {
+        span {
+            text-align: center;
+            display: block;
+            margin-bottom: 15px;
+        }
+    }
+
+    .page-form {
+        padding: 15px;
+        border: 1px solid #c3c3c3;
+        border-radius: 5px;
+
+        display: flex;
+        flex-direction: column;
+
+        label {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+
+        :not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .form-actions {
+            text-align: right;
+
+            button {
+                padding: 5px;
+            }
+        }
+    }
+}
